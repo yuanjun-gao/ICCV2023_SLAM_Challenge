@@ -27,7 +27,7 @@ Key features of our dataset:
 3. __Multi-Degraded:__ By incorporating multiple sensor modalities and challenging conditions like fog, snow, smoke, and illumination changes, the dataset introduces various levels of sensor degradation.
 4. __Heterogeneous Kinematic Profiles:__ The SubT-MRS Dataset uniquely features time-synchronized sensor data from diverse vehicles, including RC cars, legged robots, drones, and handheld devices, each operating within distinct speed ranges.
 
-### Download Our Sample Datasets
+### Sample Datasets
 
 |Name|	Location|	Robot	|Sensors	|Description|	Degraded types	|Length|	Return to origin|	Size|	
 |--|--|--|--|--|--|--|--|--|
