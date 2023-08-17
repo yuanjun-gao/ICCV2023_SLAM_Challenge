@@ -47,7 +47,7 @@ You can participate either __Visual-inertial challenge__  or __LiDAR-inertial ch
 
 
 ## ICCV 23 Workshop Submission Requirment
-See the three challenge track web pages for the requirement of estimated trajectories. The three challenge track web pages can be accessed [here](https://superodometry.com/datasets). In addition, every participating team will be required to submit a report describing their algorithm. More information about the report is coming soon.  
+See the three challenge track web pages for the requirement of estimated trajectories. The three challenge track web pages can be accessed [here](https://superodometry.com/datasets). In addition, every participating team will be required to submit a report describing their algorithm. A template for the report is [here](https://superodometry.com/Report/ICCV_Report_Template.zip).  
 
 ## FAQ
 __Is the final scoring based on the aggregate performance across all three tracks?__  
