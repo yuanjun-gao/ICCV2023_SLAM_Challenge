@@ -37,6 +37,42 @@ Key features of our dataset:
 |[Subt R1](https://drive.google.com/drive/folders/147tp3dgOAgNJyJsssugvmhdD9zbJLocq)|Subt|	[subt_r1](https://drive.google.com/drive/folders/1ZZ0JZTaiP59DsvJ87jxwBzQhy2L3HHaX)|IMU, Lidar|	UGV goes in part of the subterranean environment|	Geometry|	436.4m(600s)	|No	|2.11GB	|
 |[Subt R2](https://drive.google.com/drive/folders/11QR9-9B1hunCFDRbl7eBe7Xjb4RhSopL)|Subt|	[subt_r2](https://drive.google.com/drive/folders/1bXSb3aQN7QmzPc8QfiTTmUihXBRgn7jA)|IMU, Lidar	|UGV goes in part of the subterranean environment|	Geometry|	536m(1909s)	|No	|1.96GB	
 
+### Instructions for Running Velodyne Driver
+velodyne_msgs/VelodyneScan messages can be converted to sensor_msgs/PointCloud2 messages by [this](https://github.com/ros-drivers/velodyne.git) driver tool in ROS1. Please follow the below instructions to use this driver.
+
+1. Prerequisite
+
+    ROS1, preferably ROS Noetic or ROS Melodic, on which the driver have been tested. The below steps assume that [ROS1 installation](http://wiki.ros.org/Installation/Ubuntu) is completed.
+
+2. Update package index files
+    ```bash
+    sudo apt-get update
+    ```
+3. Install ROS packages
+    ```bash
+    rosversion -d | xargs bash -c 'sudo apt-get install -y ros-$0-pcl-ros ros-$0-roslint ros-$0-diagnostic-updater ros-$0-angles'
+    ```
+4. Install other packages
+    ```bash
+    sudo apt-get install -y libpcap-dev libyaml-cpp-dev
+    ```
+5. Download and build the driver
+
+    Note that the driver code is tested on the master branch on August 2023.
+    ```bash
+    mkdir -p velodyne_ws/src
+    cd velodyne_ws/src
+    git clone https://github.com/ros-drivers/velodyne.git
+    cd ..
+    catkin_make
+    ```
+6. Run the driver
+    ```bash
+    source devel/setup.bash
+    roslaunch velodyne_pointcloud VLP16_points.launch
+    ```
+    This will launch several ROS nodes, which subscribe to the topic /velodyne_packets for input velodyne_msgs/VelodyneScan messages and publish sensor_msgs/PointCloud2 messages to the topic /velodyne_points.
+
 ## The Hardware of the Datasets
 [Visit the documentation for the hardware information here](Hardware_Information.md)
 
